@@ -1,0 +1,27 @@
+<div class="main-wrapper">
+  <div class="spacer"></div>
+  <div class="barcode-scanner">
+    <br>
+    <barcode-scanner-livestream #BarecodeScannerLivestreamComponent type="code_128" (valueChanges)="onValueChanges($event)"></barcode-scanner-livestream>
+  </div>
+  <mat-card>
+    <h3>
+      <span *ngIf="barcodeValue">
+        {{barcodeValue}}
+      </span>
+      <span *ngIf="!barcodeValue">
+        Please Scan Your Desk's Barcode
+      </span>
+    </h3>
+  </mat-card>
+  <div class="spacer"></div>
+  <div class="button-row">
+    <button mat-flat-button
+      (click)="goSubmit()"
+      color="primary" 
+      class="next-btn"
+      [disabled]="!barcodeValue">
+      Next
+    </button>
+  </div>
+</div>

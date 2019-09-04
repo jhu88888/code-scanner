@@ -1,0 +1,14 @@
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .tool-bar {
+    height: 56px;
+  }
+
+  .router-wrapper {
+    flex: 1 auto;
+  }
+}
