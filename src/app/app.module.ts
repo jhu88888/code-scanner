@@ -13,6 +13,8 @@ import { BarecodeScannerLivestreamModule } from 'ngx-barcode-scanner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
     MaterialsModule,
     BrowserAnimationsModule,
     BarecodeScannerLivestreamModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
