@@ -1,5 +1,3 @@
-
-
 .main-wrapper {
   width: 100%;
   height: 100%;
@@ -8,14 +6,39 @@
   align-items: center;
   justify-content: center;
 
+  .scanner-title {
+    padding: 1em 0;
+  }
+
   .barcode-scanner {
     width: 100%;
-    border-radius: 15px;
+    // border-radius: 15px;
     overflow: hidden;
+    position: relative;
+
+    .mask {
+      position: absolute;
+      width: 100%;
+      z-index: 99;
+      height: 100%;
+    }
   }
 
   .spacer {
     flex: 1 auto;
+  }
+
+  .barcode-value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .sub-msg {
+      margin: 0;
+      font-size: .8em;
+      color: #b7b7b7;
+    }
   }
 
   .button-row {

@@ -15,7 +15,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this._router.navigate(['scan'])
-    }, 3000)
+    }, 4000)
   }
 
 }

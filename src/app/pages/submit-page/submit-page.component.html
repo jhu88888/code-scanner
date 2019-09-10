@@ -1,9 +1,9 @@
 <div class="main-wrapper">
   <h3>The desk you will sit on today is:</h3>
   <h1>{{this.scanned_desk_id}}</h1>
-  <form class="main-form" [formGroup]="mainForm" (ngSubmit)="submit()" *ngIf="!request_sent">
+  <form class="main-form" [formGroup]="mainForm" (ngSubmit)="reserve()" *ngIf="!request_sent">
     <mat-form-field class="corpId-input">
-      <input matInput placeholder="Your CorpId (A#)" formControlName="corpId">
+      <input matInput placeholder="Your CorpId (A#)" formControlName="employee_id">
     </mat-form-field>
     <div class="button-row">
       <button mat-flat-button

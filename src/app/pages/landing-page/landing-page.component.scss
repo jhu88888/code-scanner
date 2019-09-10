@@ -1,0 +1,68 @@
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .landing-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    transition: ease all .2s;
+  }
+
+  .phone-img {
+    -webkit-animation-name: phone;
+    -webkit-animation-duration: 1s;
+    animation-name: phone;
+    animation-duration: 1s;
+  }
+
+  .thumb-img {
+    -webkit-animation-name: thumb;
+    -webkit-animation-duration: 2s;
+    animation-name: thumb;
+    animation-duration: 2s;
+  }
+
+  .pin-img {
+    -webkit-animation-name: pin;
+    -webkit-animation-duration: 3.5s;
+    animation-name: pin;
+    animation-duration: 3.5s;
+  }
+}
+
+// Animation
+@-webkit-keyframes phone {
+  0% { left: 200px; }
+  100% { left: 0px; }
+}
+
+@keyframes phone {
+  0% { left: 200px; }
+  100% { left: 0px; }
+}
+
+@-webkit-keyframes thumb {
+  0% { left: 200px; }
+  100% { left: 0px; }
+}
+
+@keyframes thumb {
+  0% { left: 200px; }
+  100% { left: 0px; }
+}
+
+@-webkit-keyframes pin {
+  0% { top: -1800px; }
+  100% { top: 148px; }
+}
+
+@keyframes pin {
+  0% { top: -1800px; }
+  100% { top: 148px; }
+}

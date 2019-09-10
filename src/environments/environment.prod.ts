@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  aws_endpoint: 'https://jsonplaceholder.typicode.com/posts'
 };

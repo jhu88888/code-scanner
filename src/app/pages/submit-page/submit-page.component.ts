@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { RequestDeskService } from 'src/app/services/request-desk.service';
 
 @Component({
   selector: 'app-submit-page',
@@ -8,17 +9,17 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./submit-page.component.scss']
 })
 export class SubmitPageComponent implements OnInit {
-
   scanned_desk_id;
   request_sent: boolean;
   mainForm = this._fb.group({
     desk_id: ['', Validators.required],
-    corpId: ['', Validators.required]
+    employee_id: ['', Validators.required]
   })
 
   constructor(
     private _route: ActivatedRoute,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private _requestDeskService: RequestDeskService,
   ) { }
 
   ngOnInit() {
@@ -33,9 +34,14 @@ export class SubmitPageComponent implements OnInit {
     })
   }
 
-  submit() {
+  reserve() {
     console.log(this.mainForm.value);
     this.request_sent = true;
+    this._requestDeskService.reserve(this.mainForm.value).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
 }
